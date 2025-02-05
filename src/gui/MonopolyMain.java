@@ -101,8 +101,7 @@ public class MonopolyMain extends JFrame{
 				Player currentPlayer = players.get(nowPlaying);
 				infoConsole.setText("You bought "+gameBoard.getAllSquares().get(currentPlayer.getCurrentSquareNumber()).getName());
 				currentPlayer.buyTitleDeed(currentPlayer.getCurrentSquareNumber());
-				int withdrawAmount = gameBoard.getAllSquares().get(currentPlayer.getCurrentSquareNumber()).getPrice();
-				currentPlayer.withdrawFromWallet(withdrawAmount);
+
 				btnBuy.setEnabled(false);
 				updatePanelPlayer1TextArea();
 				updatePanelPlayer2TextArea();

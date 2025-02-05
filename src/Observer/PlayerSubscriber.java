@@ -1,5 +1,7 @@
 package Observer;
 
+import gui.Player;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
@@ -9,9 +11,8 @@ package Observer;
  *
  * @author juandev
  */
-public interface Observer {
+public interface PlayerSubscriber {
     
-    public void addSubscriber(Subscriber sub);
-    public void removeSubscriber(Subscriber sub);
+    void update(Player player);
     
 }

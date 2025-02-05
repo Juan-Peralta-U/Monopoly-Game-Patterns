@@ -12,6 +12,7 @@ package gui;
 import Composite.Component;
 import Composite.Group_Property;
 import Composite.Square;
+import Observer.SubscriberBoard;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -33,6 +34,7 @@ public class Board extends JPanel {
 
 	private ArrayList<Square> allSquares = new ArrayList<Square>();
 	private ArrayList<Square> unbuyableSquares = new ArrayList<Square>(); // squares like "Go", "Chances" etc...
+        private SubscriberBoard subscriber;
 	
 	public ArrayList<Square> getUnbuyableSquares(){
 		return unbuyableSquares;
@@ -52,6 +54,11 @@ public class Board extends JPanel {
 		this.setLayout(null);
 		initializeSquares();
 	}
+        
+        public void setSubscriberBoard(SubscriberBoard subscriber){
+            this.subscriber = subscriber;
+            subscriber.setBoard(this);
+        }
 
 	private void initializeSquares() {
 		// TODO Auto-generated method stub

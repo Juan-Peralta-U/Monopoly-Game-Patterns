@@ -4,26 +4,38 @@
  */
 package Observer;
 
+import gui.Player;
 import java.util.ArrayList;
 
 /**
  *
  * @author juandev
  */
-public class PlayerObserver implements Observer{
+public class PlayerObserver {
 
     
-    private ArrayList<Subscriber> subscribers = new ArrayList<>();
+    private Player player;
+    private ArrayList<PlayerSubscriber> subscribers = new ArrayList<>();
     
-    @Override
-    public void addSubscriber(Subscriber sub) {
+    
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+    
+    public void addSubscriber(PlayerSubscriber sub) {
         subscribers.add(sub);
         
     }
 
-    @Override
-    public void removeSubscriber(Subscriber sub) {
+    public void removeSubscriber(PlayerSubscriber sub) {
         subscribers.remove(sub);
+    }
+
+    public void updateSubscriber() {
+        for(PlayerSubscriber subscriber : subscribers){
+            subscriber.update(player);
+        }
+        
     }
     
 }

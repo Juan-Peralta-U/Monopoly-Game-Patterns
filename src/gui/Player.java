@@ -8,6 +8,7 @@ package gui;
  *
  * @author jhona
  */
+import Observer.PlayerObserver;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -22,6 +23,8 @@ public class Player extends JPanel {
 
 	private int playerNumber;
 	JLabel lblPlayerNumber;
+        
+        PlayerObserver playerObserver;
 	static int totalPlayers = 0; // we might need this number later on
 	static HashMap<Integer, Integer> ledger= new HashMap<>();
 
@@ -69,7 +72,7 @@ public class Player extends JPanel {
 		} else {
 			titleDeeds.add(this.getCurrentSquareNumber());
 			ledger.put(squareNumber, this.getPlayerNumber()); // everytime a player buys a title deed, it is written in ledger, for example square 1 belongs to player 2
-		
+                        playerObserver.updateSubscriber();
 		}
 	}
 
@@ -91,6 +94,11 @@ public class Player extends JPanel {
 		totalPlayers++;
 	}
 
+        public void setObserver(PlayerObserver playerObserver){
+            this.playerObserver = playerObserver;
+            playerObserver.setPlayer(this);
+        }
+        
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 	}
