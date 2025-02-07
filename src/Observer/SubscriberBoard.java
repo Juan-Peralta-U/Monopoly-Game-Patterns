@@ -4,6 +4,7 @@
  */
 package Observer;
 
+import Composite.Square;
 import gui.Board;
 import gui.Player;
 
@@ -21,8 +22,15 @@ public class SubscriberBoard implements PlayerSubscriber{
     
     @Override
     public void update(Player player) {
-        int withdrawAmount = gameBoard.getAllSquares().get(player.getCurrentSquareNumber()).getPrice();
+        
+        System.out.println("Sub board");
+        
+        Square currentSquare = gameBoard.getAllSquares().get(player.getCurrentSquareNumber());
+        
+        int withdrawAmount = currentSquare.getPrice();
 	player.withdrawFromWallet(withdrawAmount);
+        
+        currentSquare.playerAction(player);
     }
     
 }

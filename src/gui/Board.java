@@ -12,6 +12,9 @@ package gui;
 import Composite.Component;
 import Composite.Group_Property;
 import Composite.Square;
+import FactoryMethod.chanceCreator;
+import FactoryMethod.comunityChestCreator;
+import FactoryMethod.rollAgainCreator;
 import Observer.SubscriberBoard;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -35,6 +38,9 @@ public class Board extends JPanel {
 	private ArrayList<Square> allSquares = new ArrayList<Square>();
 	private ArrayList<Square> unbuyableSquares = new ArrayList<Square>(); // squares like "Go", "Chances" etc...
         private SubscriberBoard subscriber;
+        private comunityChestCreator chessCreator = new comunityChestCreator();
+        private rollAgainCreator rollAgainCreator = new rollAgainCreator();
+        private chanceCreator chanceCreator = new chanceCreator();
 	
 	public ArrayList<Square> getUnbuyableSquares(){
 		return unbuyableSquares;
@@ -78,7 +84,7 @@ public class Board extends JPanel {
 				"Community Chest",
 				"Tennessee Ave",
 				"New York Ave",
-				"Squeeze Play",
+				"Roll once",
 				"Pacific Ave",
 				"North Carolina Ave",
 				"Chance",
@@ -100,6 +106,7 @@ public class Board extends JPanel {
 		this.add(square02);
 		allSquares.add(square02);
 		unbuyableSquares.add(square02);
+                square02.setPlayerAction(chessCreator.createProduct());
 		
 		Square square03 = new Square(306,6,100,100,squareNames[3],180);
 		this.add(square03);
@@ -113,6 +120,7 @@ public class Board extends JPanel {
 		this.add(square05);
 		allSquares.add(square05);
 		unbuyableSquares.add(square05);
+                square05.setPlayerAction(rollAgainCreator.createProduct());
 
 		// squares on the right
 		Square square06 = new Square(506,106,100,100,squareNames[6],-90);
@@ -123,6 +131,7 @@ public class Board extends JPanel {
 		this.add(square07);
 		allSquares.add(square07);
 		unbuyableSquares.add(square07);
+                square07.setPlayerAction(chanceCreator.createProduct());
 		
 		Square square08 = new Square(506,306,100,100,squareNames[8],-90);
 		this.add(square08);
@@ -146,6 +155,7 @@ public class Board extends JPanel {
 		this.add(square12);
 		allSquares.add(square12);
 		unbuyableSquares.add(square12);
+                square12.setPlayerAction(chessCreator.createProduct());
 		
 		Square square13 = new Square(206,506,100,100,squareNames[13],0);
 		this.add(square13);
@@ -173,6 +183,7 @@ public class Board extends JPanel {
 		this.add(square18);
 		allSquares.add(square18);
 		unbuyableSquares.add(square18);
+                square18.setPlayerAction(chanceCreator.createProduct());
 		
 		Square square19 = new Square(6,106,100,100,squareNames[19],90);
 		this.add(square19);

@@ -24,6 +24,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import Composite.Component;
+import FactoryMethod.Action;
 
 public class Square extends JPanel implements Component{
 
@@ -34,11 +35,20 @@ public class Square extends JPanel implements Component{
 	private int price;
 	private int rentPrice;
         private boolean isRentPaid = false;
+        private Action squareAction = null;
 
     public Square() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+        public void playerAction(Player player){
+            if(squareAction == null) return;
+            squareAction.playerAction(player);
+        }
+        
+        public void setPlayerAction(Action action){
+            squareAction = action;
+        }
 	
 	public void setRentPrice(int rentPrice) {
 		this.rentPrice = rentPrice;

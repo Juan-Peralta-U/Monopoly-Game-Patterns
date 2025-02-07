@@ -8,6 +8,8 @@ package gui;
  *
  * @author jhona
  */
+import Observer.PlayerObserver;
+import Observer.SubscriberBoard;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -69,11 +71,25 @@ public class MonopolyMain extends JFrame{
 		player1 = new Player(1, Color.RED);
 		players.add(player1);
 		layeredPane.add(player1, new Integer(1));
+                
 
 		player2 = new Player(2, Color.BLUE);
 		players.add(player2);
 		layeredPane.add(player2, new Integer(1));
-
+                
+                
+                PlayerObserver playerObserver1 = new PlayerObserver();
+                PlayerObserver playerObserver2 = new PlayerObserver();
+                
+                SubscriberBoard sub = new SubscriberBoard();
+                gameBoard.setSubscriberBoard(sub);
+                
+                playerObserver1.addSubscriber(sub);
+                playerObserver2.addSubscriber(sub);
+                
+                player1.setObserver(playerObserver1);
+                player2.setObserver(playerObserver2);
+                
 		JPanel rightPanel = new JPanel();
 		rightPanel.setBackground(Color.LIGHT_GRAY);
 		rightPanel.setBorder(new LineBorder(new Color(0, 0, 0)));

@@ -4,20 +4,18 @@
  */
 package FactoryMethod;
 
-import Composite.Square;
 import gui.Player;
 
 /**
  *
  * @author juandev
  */
-public class comunityChestAction implements Action {
+public class rollAgainAction implements Action{
 
     @Override
     public void playerAction(Player player) {
-        player.depositToWallet(300);
-        System.out.println("Chest action");
-
+        player.doubleDiceForPlayer = true;
+        System.out.println("Roll Again action");
     }
     
 }

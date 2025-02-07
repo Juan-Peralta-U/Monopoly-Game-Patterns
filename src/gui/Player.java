@@ -24,7 +24,7 @@ public class Player extends JPanel {
 	private int playerNumber;
 	JLabel lblPlayerNumber;
         
-        Boolean doubleDiceForPlayer;
+        public Boolean doubleDiceForPlayer;
         PlayerObserver playerObserver;
 	static int totalPlayers = 0; // we might need this number later on
 	static HashMap<Integer, Integer> ledger= new HashMap<>();
@@ -143,6 +143,8 @@ public class Player extends JPanel {
 			MonopolyMain.infoConsole.setText("This property belongs to player "+ledger.get(this.getCurrentSquareNumber()));
 		}
 		//ledger.put(this.getCurrentSquareNumber(), this.getPlayerNumber());
+                
+                this.playerObserver.updateSubscriber();
 	}
 
 
