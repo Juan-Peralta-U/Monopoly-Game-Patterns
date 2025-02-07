@@ -4,6 +4,8 @@
  */
 package Composite;
 
+import gui.Player;
+
 /**
  *
  * @author jhona

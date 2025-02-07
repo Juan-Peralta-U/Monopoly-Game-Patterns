@@ -29,11 +29,15 @@ public class Square extends JPanel implements Component{
 
 	int number;
 	static int totalSquares = 0;
-	private final String name;
+	private String name;
 	JLabel nameLabel;
 	private int price;
 	private int rentPrice;
         private boolean isRentPaid = false;
+
+    public Square() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 	
 	public void setRentPrice(int rentPrice) {
@@ -140,5 +144,7 @@ public class Square extends JPanel implements Component{
 	public void setRentPaid(boolean pay) {
 		isRentPaid = pay;
 	}
+
+
 
 }

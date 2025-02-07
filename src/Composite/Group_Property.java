@@ -4,6 +4,7 @@
  */
 package Composite;
 
+import gui.Player;
 import java.awt.List;
 import java.util.ArrayList;
 
@@ -58,6 +59,5 @@ public class Group_Property implements Component{
         return null;
     }
 
-    
     
 }
