@@ -28,11 +28,13 @@ import Composite.Component;
 public class Square extends JPanel implements Component{
 
 	int number;
-	private String name;
-	JLabel nameLabel;
 	static int totalSquares = 0;
+	private final String name;
+	JLabel nameLabel;
 	private int price;
 	private int rentPrice;
+        private boolean isRentPaid = false;
+
 	
 	public void setRentPrice(int rentPrice) {
 		this.rentPrice = rentPrice;
@@ -73,8 +75,6 @@ public class Square extends JPanel implements Component{
 			nameLabel.setBounds(0,20,this.getWidth(),20);
 			this.add(nameLabel);
 		} else {	
-			
-			
 			nameLabel = new JLabel(labelString) {
 				protected void paintComponent(Graphics g) {
 					Graphics2D g2 = (Graphics2D)g;
@@ -104,10 +104,8 @@ public class Square extends JPanel implements Component{
 			}
 			nameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 			nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			
 			this.add(nameLabel);
 		} 
-
 	}
 
 	public void paintComponent(Graphics g) {
@@ -132,13 +130,13 @@ public class Square extends JPanel implements Component{
 			g.setColor(Color.GREEN);
 			g.fillRect(this.getWidth()-20, 0, 20, this.getHeight());
 		}
-
 	}
 
-	private boolean isRentPaid = false;
+        
 	public boolean isRentPaid() {
 		return isRentPaid;
 	}
+        
 	public void setRentPaid(boolean pay) {
 		isRentPaid = pay;
 	}

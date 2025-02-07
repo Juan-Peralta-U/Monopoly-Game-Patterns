@@ -24,6 +24,7 @@ public class Player extends JPanel {
 	private int playerNumber;
 	JLabel lblPlayerNumber;
         
+        Boolean doubleDiceForPlayer;
         PlayerObserver playerObserver;
 	static int totalPlayers = 0; // we might need this number later on
 	static HashMap<Integer, Integer> ledger= new HashMap<>();

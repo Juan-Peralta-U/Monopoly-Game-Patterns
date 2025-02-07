@@ -11,16 +11,8 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
-import java.awt.RenderingHints;
-import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -29,24 +21,19 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import gui.Dice;
-import gui.Player;
-import gui.Board;
 
 public class MonopolyMain extends JFrame{
 
-	private JPanel contentIncluder;
+	private final JPanel contentIncluder;
 	static JTextArea infoConsole;
 	JPanel playerAssetsPanel;
 	CardLayout c1 = new CardLayout();
-	ArrayList<Player> players = new ArrayList<Player>();
+	ArrayList<Player> players = new ArrayList<>();
 	static int turnCounter = 0;
 	JButton btnNextTurn;
 	JButton btnRollDice;
