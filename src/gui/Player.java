@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+//Hola xd
+
 public class Player extends JPanel {
 
 	private int playerNumber;
